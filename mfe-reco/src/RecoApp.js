@@ -42,6 +42,22 @@ const S = {
     marginBottom: '0.3rem',
   },
   price: { color: '#ffd700', fontSize: '0.72rem', fontWeight: 'bold' },
+  button: {
+    width: '100%',
+    marginTop: '0.6rem',
+    padding: '0.35rem 0',
+    background: '#ff2e63',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '2px',
+    fontSize: '0.58rem',
+    fontWeight: 'bold',
+    fontFamily: "'Courier New', monospace",
+    cursor: 'pointer',
+    textTransform: 'uppercase',
+    letterSpacing: '0.08em',
+    transition: 'background 0.15s, box-shadow 0.15s',
+  },
 };
 
 export default function RecoApp() {
@@ -89,6 +105,26 @@ export default function RecoApp() {
             <div style={S.name}>{p.name}</div>
             <div style={S.genre}>{p.genre}</div>
             <div style={S.price}>{p.price.toFixed(2)} €</div>
+            <button
+              style={S.button}
+              onClick={() => EventBus.emit('PRODUCT_ADDED', {
+                id:    p.id,
+                name:  p.name,
+                price: p.price,
+                emoji: p.emoji,
+                genre: p.genre,
+              })}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = '#e0284f';
+                e.currentTarget.style.boxShadow = '0 0 10px #ff2e6355';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = '#ff2e63';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              + Ajouter
+            </button>
           </div>
         ))}
       </div>
