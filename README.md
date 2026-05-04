@@ -53,13 +53,16 @@ Communication via `window.CustomEvent` — tous les MFEs partagent le même `win
 
 ```bash
 # Terminal 1
-cd mfe-product && npm install && npm start
+cd .\mfe-product && npm install && npm start
 
 # Terminal 2
-cd mfe-cart && npm install && npm start
+cd .\mfe-cart && npm install && npm start
 
 # Terminal 3
-cd shell && npm install && npm start
+cd .\mfe-reco && npm install && npm start
+
+# Terminal 3
+cd .\shell && npm install && npm start
 ```
 
 Ouvrir **http://localhost:3000**
