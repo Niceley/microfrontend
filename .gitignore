@@ -1,0 +1,7 @@
+.idea
+.vscode
+
+shell/node_modules
+mfe-cart/node_modules
+mfe-reco/node_modules
+mfe-product/node_modules
